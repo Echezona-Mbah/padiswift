@@ -1,0 +1,258 @@
+@font-face {
+  font-family: "flaticon_mycollection";
+  src: url("flaticon_mycollection9cf9.ttf?883d5798188acb2b2cf6d4c0cc69ad8f") format("truetype"), url("flaticon_mycollection9cf9.woff?883d5798188acb2b2cf6d4c0cc69ad8f") format("woff"), url("flaticon_mycollection9cf9.woff2?883d5798188acb2b2cf6d4c0cc69ad8f") format("woff2"), url("flaticon_mycollection9cf9.eot?883d5798188acb2b2cf6d4c0cc69ad8f#iefix") format("embedded-opentype"), url("flaticon_mycollection9cf9.svg?883d5798188acb2b2cf6d4c0cc69ad8f#flaticon_mycollection") format("svg");
+}
+i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
+  font-family: flaticon_mycollection !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-add-friend:before {
+  content: "\f101";
+}
+
+.flaticon-certificate:before {
+  content: "\f102";
+}
+
+.flaticon-data-mining:before {
+  content: "\f103";
+}
+
+.flaticon-design-tools:before {
+  content: "\f104";
+}
+
+.flaticon-networking:before {
+  content: "\f105";
+}
+
+.flaticon-chat:before {
+  content: "\f106";
+}
+
+.flaticon-investment:before {
+  content: "\f107";
+}
+
+.flaticon-chat-1:before {
+  content: "\f108";
+}
+
+.flaticon-web-chat:before {
+  content: "\f109";
+}
+
+.flaticon-tactics:before {
+  content: "\f10a";
+}
+
+.flaticon-data-protection:before {
+  content: "\f10b";
+}
+
+.flaticon-data-management:before {
+  content: "\f10c";
+}
+
+.flaticon-data-management-1:before {
+  content: "\f10d";
+}
+
+.flaticon-premium:before {
+  content: "\f10e";
+}
+
+.flaticon-repairing:before {
+  content: "\f10f";
+}
+
+.flaticon-download-file:before {
+  content: "\f110";
+}
+
+.flaticon-analytic-graph:before {
+  content: "\f111";
+}
+
+.flaticon-cloud-user:before {
+  content: "\f112";
+}
+
+.flaticon-chatting:before {
+  content: "\f113";
+}
+
+.flaticon-database-management:before {
+  content: "\f114";
+}
+
+.flaticon-cloud-settings:before {
+  content: "\f115";
+}
+
+.flaticon-cloud-settings-1:before {
+  content: "\f116";
+}
+
+.flaticon-skill:before {
+  content: "\f117";
+}
+
+.flaticon-tap:before {
+  content: "\f118";
+}
+
+.flaticon-install:before {
+  content: "\f119";
+}
+
+.flaticon-cloud-settings-2:before {
+  content: "\f11a";
+}
+
+.flaticon-data-analytics:before {
+  content: "\f11b";
+}
+
+.flaticon-task:before {
+  content: "\f11c";
+}
+
+.flaticon-tasks:before {
+  content: "\f11d";
+}
+
+.flaticon-portfolio:before {
+  content: "\f11e";
+}
+
+.flaticon-quote:before {
+  content: "\f11f";
+}
+
+.flaticon-strategy:before {
+  content: "\f120";
+}
+
+.flaticon-arrow-with-scribble:before {
+  content: "\f121";
+}
+
+.flaticon-coding:before {
+  content: "\f122";
+}
+
+.flaticon-promotion:before {
+  content: "\f123";
+}
+
+.flaticon-report:before {
+  content: "\f124";
+}
+
+.flaticon-cloud-servers:before {
+  content: "\f125";
+}
+
+.flaticon-money:before {
+  content: "\f126";
+}
+
+.flaticon-investment-1:before {
+  content: "\f127";
+}
+
+.flaticon-pointing-to-right:before {
+  content: "\f128";
+}
+
+.flaticon-rocket:before {
+  content: "\f129";
+}
+
+.flaticon-mobile-banking:before {
+  content: "\f12a";
+}
+
+.flaticon-mobile-payment:before {
+  content: "\f12b";
+}
+
+.flaticon-tasks-1:before {
+  content: "\f12c";
+}
+
+.flaticon-customize:before {
+  content: "\f12d";
+}
+
+.flaticon-secure-payment:before {
+  content: "\f12e";
+}
+
+.flaticon-airplane-toy-of-folded-paper:before {
+  content: "\f12f";
+}
+
+.flaticon-add-user:before {
+  content: "\f130";
+}
+
+.flaticon-software-as-service:before {
+  content: "\f131";
+}
+
+.flaticon-experiments:before {
+  content: "\f132";
+}
+
+.flaticon-task-1:before {
+  content: "\f133";
+}
+
+.flaticon-24-hours-support:before {
+  content: "\f134";
+}
+
+.flaticon-credit-card:before {
+  content: "\f135";
+}
+
+.flaticon-fees:before {
+  content: "\f136";
+}
+
+.flaticon-mobile-banking-1:before {
+  content: "\f137";
+}
+
+.flaticon-chat-2:before {
+  content: "\f138";
+}
+
+.flaticon-trend:before {
+  content: "\f139";
+}
+
+.flaticon-easy-installation:before {
+  content: "\f13a";
+}
+
+.flaticon-payment-gateway:before {
+  content: "\f13b";
+}
+
+.flaticon-cloud-server:before {
+  content: "\f13c";
+}
+
+.flaticon-send-money:before {
+  content: "\f13d";
+}/*# sourceMappingURL=flaticon_mycollection.css.map */
