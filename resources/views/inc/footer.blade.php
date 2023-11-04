@@ -21,19 +21,25 @@
                             <h4>Useful Links</h4>
                             <ul class="footer-link">
                                 <li>
-                                    <a href="index.html">Home</a>
+                                    <a href="/.">Home</a>
                                 </li>
                                 <li>
-                                    <a href="services.html">Service </a>
+                                    <a href="services">Service </a>
                                 </li>
                                 <li>
-                                    <a href="about.html">Why Us</a>
+                                    <a href="about">About Us</a>
                                 </li>
                                 <li>
-                                    <a href="jobs.html">How It Works</a>
+                                    <a href="blog">Blog</a>
                                 </li>
                                 <li>
-                                    <a href="contact.html">Contact Us</a>
+                                    <a href="contact">Contact Us</a>
+                                </li>
+                                <li>
+                                    <a href="terms">Terms Of Use</a>
+                                </li>
+                                <li>
+                                    <a href="policy">Privacy Policy</a>
                                 </li>
                             </ul>
                         </div>
@@ -48,11 +54,11 @@
                                 </li>
                                 <li>
                                     <span>Need Support?</span>
-                                    <a href="https://templates.hibotheme.com/cdn-cgi/l/email-protection#056d6069696a45776c6769602b666a68"><span class="__cf_email__" data-cfemail="3b535e5757547b495259575e15585456">[email&#160;protected]</span></a>
+                                    <a href="mailtto:info@padiSwift.com"><span class="__cf_email__">info@padiSwift.com</span></a>
                                 </li>
                                 <li>
                                     <span>Location</span>
-                                    <p>Here at Syracuse, 45628</p>
+                                    <p>No. 3 kenyatta Street, Uwani Enugu Nigeria </p>
                                 </li>
                             </ul>
                         </div>
@@ -60,9 +66,9 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="footer-widget style5">
                             <h4>About Us</h4>
-                            <p>RIble is a cutting-edge application that is designed to transform the way you work & increase your productivity.</p>
-                            <a href="index.html" class="footer-logo">
-                                <img src="assets/images/logo.png" alt="logo">
+                            <p>At <span class="home-one-colory">{{env('APP_FN')}}</span>{{env('APP_LN')}}, we believe in transforming the way you experience transactions and services. Our platform is more than just a place to pay bills or recharge your phone; it's a lifestyle upgrade designed to simplify your daily life.</p>
+                            <a href="./" class="footer-logo">
+                                <img width="160" src="assets/images/logo-main.png" alt="logo">
                             </a>
                         </div>
                     </div>
@@ -75,7 +81,7 @@
         <div class="copyright-style2-warp  bg-f9f2f3">
             <div class="container">
                 <div class="inner-copyright-warp style5 d-flex align-items-center justify-content-between">
-                    <p>© Rible is Proudly Owned by <a href="https://hibotheme.com/" target="_blank" rel="noopener">HiboTheme</a></p>
+                    <p>©<?php $d=date('Y'); print $d;?> <span class="home-one-colory">{{env('APP_FN')}}</span>{{env('APP_LN')}} is Proudly Owned by <a href="https://centadesk.com" target="_blank" rel="noopener">{{env('COMPANY_NAME')}}</a></p>
                     <ul class="social-list">
                         <li>
                             <a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-circle-line"></i></a>
@@ -88,7 +94,7 @@
                         </li>
                         
                         <li>
-                            <a href="https://pinterest.com/" target="_blank"><i class="ri-pinterest-line"></i></a>
+                            <a href="https://youtube.com/" target="_blank"><i class="ri-youtube-line"></i></a>
                         </li>
                     </ul>
                 </div>

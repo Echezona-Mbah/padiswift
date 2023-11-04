@@ -186,7 +186,7 @@ Section Warp  Style
   margin-bottom: 0;
 }
 .section-warp .section-btn .default-btn {
-  background: linear-gradient(95.64deg, #3921F5 0%, #38DA71 100%);
+  background: linear-gradient(95.64deg, #2743FD 0%, #38DA71 100%);
   padding: 15px 28px;
   border: none;
   position: relative;
@@ -250,7 +250,7 @@ Section Warp  Style
 .single-section .features-title {
   font-weight: 500;
   font-size: 16px;
-  color: #3921F5;
+  color: #2743FD;
   margin-bottom: 10px;
   display: block;
 }
@@ -296,7 +296,7 @@ Section Warp  Style
 .section-title .features-title {
   font-weight: 500;
   font-size: 16px;
-  color: #3921F5;
+  color: #2743FD;
   margin-bottom: 10px;
   display: block;
 }
@@ -305,11 +305,15 @@ Section Warp  Style
 Page Main Color  Style
 ======================================================*/
 .home-one-main {
-  background-color: #3921F5;
+  background-color: #2743FD;
+}
+
+.home-one-colory {
+  color: #2743FD;
 }
 
 .home-one-color {
-  background-color: #3921F5;
+  background-color: #2743FD;
 }
 
 .home-two-main {
@@ -456,7 +460,7 @@ Hero Warp  Style
   margin-bottom: 40px;
 }
 .hero-style1-content .default-btn {
-  background: linear-gradient(95.64deg, #3921F5 0%, #38DA71 100%);
+  background: linear-gradient(95.64deg, #2743FD 0%, #38DA71 100%);
   padding: 15px 28px;
   border: none;
   position: relative;
@@ -485,7 +489,7 @@ Hero Warp  Style
 }
 .hero-style1-content .title {
   font-weight: 500;
-  color: #3921F5;
+  color: #2743FD;
   display: inline-block;
   margin-bottom: 5px;
 }
@@ -515,11 +519,11 @@ Hero Warp  Style
   transition: all ease 0.5s;
 }
 .hero-style1-content .hero-style1-btn .hero-service-btn:hover {
-  color: #3921F5;
+  color: #2743FD;
 }
 .hero-style1-content .hero-style1-btn .hero-service-btn i {
   font-size: 38px;
-  color: #3921F5;
+  color: #2743FD;
   position: absolute;
   left: 0;
   top: 50%;
@@ -543,7 +547,7 @@ Hero Warp  Style
   left: 0;
   top: -2px;
   font-size: 20px;
-  color: #3921F5;
+  color: #2743FD;
 }
 
 .hero-style1-warp {
@@ -708,7 +712,7 @@ Boost & Slider  Style
   transition: all ease 0.5s;
 }
 .boost-card .icon-content h3 a:hover {
-  color: #3921F5;
+  color: #2743FD;
 }
 .boost-card p {
   margin-bottom: 25px;
@@ -721,11 +725,11 @@ Boost & Slider  Style
   transition: all ease 0.5s;
 }
 .boost-card .hero-service-btn:hover {
-  color: #3921F5;
+  color: #2743FD;
 }
 .boost-card .hero-service-btn i {
   font-size: 38px;
-  color: #3921F5;
+  color: #2743FD;
   position: absolute;
   left: 0;
   top: 50%;
@@ -1002,7 +1006,7 @@ Solution Warp  Style
   z-index: 1;
   transition: all ease 0.5s;
   color: #141F39;
-  background: linear-gradient(95.64deg, #3921F5 0%, #38DA71 100%);
+  background: linear-gradient(95.64deg, #2743FD 0%, #38DA71 100%);
 }
 .solution-content .nav-pills .nav-item .nav-link::before {
   content: "";
@@ -1018,7 +1022,7 @@ Solution Warp  Style
   background: #ffffff;
 }
 .solution-content .nav-pills .nav-item .nav-link.active {
-  background: #3921F5;
+  background: #2743FD;
   color: #ffffff;
 }
 .solution-content .nav-pills .nav-item .nav-link.active::before {
@@ -1061,7 +1065,7 @@ Solution Warp  Style
   font-size: 20px;
   top: 0;
   left: 0;
-  color: #3921F5;
+  color: #2743FD;
 }
 
 .solution-warp {
@@ -1164,7 +1168,7 @@ Management Warp  Style
   display: block;
 }
 .management-accordion section:hover .default-btn {
-  background: linear-gradient(95.64deg, #3921F5 0%, #38DA71 100%);
+  background: linear-gradient(95.64deg, #2743FD 0%, #38DA71 100%);
   padding: 15px 28px;
   border: none;
   display: inline-block;
@@ -1244,7 +1248,7 @@ Management Warp  Style
   display: block;
 }
 .management-accordion section.active .default-btn {
-  background: linear-gradient(95.64deg, #3921F5 0%, #38DA71 100%);
+  background: linear-gradient(95.64deg, #2743FD 0%, #38DA71 100%);
   padding: 15px 28px;
   border: none;
   display: inline-block;
@@ -1499,19 +1503,19 @@ Video Warp  Style
   line-height: 62px;
   margin-left: auto;
   margin-right: auto;
-  color: #3921F5;
+  color: #2743FD;
   position: relative;
   transition: all ease 0.5s;
 }
 .video-warp .video-btn:hover {
-  background-color: #3921F5;
+  background-color: #2743FD;
   color: #ffffff;
 }
 .video-warp .video-btn:hover::before {
-  border-color: #3921F5;
+  border-color: #2743FD;
 }
 .video-warp .video-btn:hover::after {
-  border-color: #3921F5;
+  border-color: #2743FD;
 }
 .video-warp .video-btn::before {
   content: "";
@@ -1553,7 +1557,7 @@ Skill Warp  Style
   margin-top: 30px;
 }
 .inner-skill-warp .skill-btn .free-btn {
-  background: linear-gradient(95.64deg, #3921F5 0%, #38DA71 100%);
+  background: linear-gradient(95.64deg, #2743FD 0%, #38DA71 100%);
   padding: 15px 35px;
   border: none;
   position: relative;
@@ -1582,13 +1586,13 @@ Skill Warp  Style
   opacity: 0;
 }
 .inner-skill-warp .skill-btn .style1 {
-  background: #3921F5;
+  background: #2743FD;
   border-color: transparent;
 }
 .inner-skill-warp .skill-btn .style1:hover {
   background: transparent;
   color: #141F39;
-  border-color: #3921F5;
+  border-color: #2743FD;
 }
 .inner-skill-warp .skill1 {
   position: absolute;
@@ -1656,7 +1660,7 @@ Footer Warp  Style
   margin-bottom: 0;
 }
 .footer-widget .footer-link li a:hover {
-  color: #3921F5;
+  color: #2743FD;
 }
 .footer-widget .footer-contact {
   list-style: none;
@@ -1722,7 +1726,7 @@ Footer Warp  Style
   transition: all ease 0.5s;
 }
 .footer-widget .input-box .input-btn:hover {
-  background-color: #3921F5;
+  background-color: #2743FD;
 }
 .footer-widget .social-list {
   list-style: none;
@@ -1750,7 +1754,7 @@ Footer Warp  Style
 }
 .footer-widget .social-list li a:hover {
   color: #ffffff;
-  background-color: #3921F5;
+  background-color: #2743FD;
 }
 .footer-widget .play-store {
   margin-left: 20px;
@@ -1804,7 +1808,7 @@ Copyright Warp  Style
   line-height: 1;
 }
 .inner-copyright-warp p a {
-  color: #3921F5;
+  color: #2743FD;
 }
 
 .copyright-warp {
@@ -1863,7 +1867,7 @@ Hero Style2 Warp  Style
 }
 .hero-style2-content .title {
   font-weight: 500;
-  color: #3921F5;
+  color: #2743FD;
   display: inline-block;
   margin-bottom: 2px;
 }
@@ -1883,7 +1887,7 @@ Hero Style2 Warp  Style
   border-radius: 50px;
   height: 55px;
   max-width: 425px;
-  background: linear-gradient(95.64deg, #3921F5 0%, #38DA71 100%);
+  background: linear-gradient(95.64deg, #2743FD 0%, #38DA71 100%);
 }
 .hero-style2-content .input-widget .input-form .form-control {
   border-radius: 50px;
@@ -2216,7 +2220,7 @@ Connecting Warp  Style
 }
 .connecting-content .content-list li i {
   position: absolute;
-  color: #3921F5;
+  color: #2743FD;
   left: 0;
   top: -3px;
   font-size: 22px;
@@ -2543,7 +2547,7 @@ Build Pricing Warp  Style
   margin-bottom: 0;
 }
 .build-card .default-btn {
-  background: linear-gradient(95.64deg, #3921F5 0%, #38DA71 100%);
+  background: linear-gradient(95.64deg, #2743FD 0%, #38DA71 100%);
   padding: 15px 28px;
   border: none;
   position: relative;
@@ -2628,7 +2632,7 @@ Copyright Warp  Style
 }
 .copyright-style2-warp .social-list li a:hover {
   color: #ffffff;
-  background-color: #3921F5;
+  background-color: #2743FD;
 }
 .copyright-style2-warp .style2 p a {
   color: #2A9A70;
@@ -2702,7 +2706,7 @@ Middle Hero Warp  Style
   margin-bottom: 40px;
 }
 .middle-hero-content .default-btn.style3 {
-  background: linear-gradient(95.64deg, #3921F5 0%, #38DA71 100%);
+  background: linear-gradient(95.64deg, #2743FD 0%, #38DA71 100%);
   padding: 15px 28px;
   border: none;
   position: relative;
@@ -2891,7 +2895,7 @@ Control Warp  Style
   background-image: url(../images/small-images/c3.png);
 }
 .control-content .control-btn {
-  background: linear-gradient(95.64deg, #3921F5 0%, #38DA71 100%);
+  background: linear-gradient(95.64deg, #2743FD 0%, #38DA71 100%);
   padding: 15px 35px;
   border: none;
   position: relative;
@@ -3111,7 +3115,7 @@ Simplify Warp  Style
   line-height: 30px;
 }
 .simplify-content .simplify-btn {
-  background: linear-gradient(95.64deg, #3921F5 0%, #38DA71 100%);
+  background: linear-gradient(95.64deg, #2743FD 0%, #38DA71 100%);
   padding: 15px 28px;
   border: none;
   position: relative;
@@ -3230,7 +3234,7 @@ Choose Plan Warp  Style
   box-shadow: 0px 10px 40px 5px rgba(20, 31, 57, 0.05);
 }
 .inner-cp-warp .cp-card .default-btn {
-  background: linear-gradient(95.64deg, #3921F5 0%, #38DA71 100%);
+  background: linear-gradient(95.64deg, #2743FD 0%, #38DA71 100%);
   padding: 15px 28px;
   border: none;
   position: relative;
@@ -4191,7 +4195,7 @@ Footer Warp  Style
   color: #FFD000;
 }
 .footer-widget.black-footer-widget .input-box .input-btn {
-  background-color: #3921F5;
+  background-color: #2743FD;
 }
 .footer-widget.black-footer-widget .input-box .input-btn:hover {
   background-color: #FFD000;
@@ -4520,7 +4524,7 @@ Video Style5 Warp  Style
 ======================================================*/
 .video-style5-warp {
   position: relative;
-  background-image: url(../images/heros/video2.jpg);
+  background-image: url(../images/heros/padiswift-users.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -5603,7 +5607,7 @@ Stand  Warp  Style
   color: #F5F5F5;
 }
 .inner-stand2-warp .stand-btn .default-btn {
-  background-color: #3921F5;
+  background-color: #2743FD;
   color: #ffffff;
 }
 .inner-stand2-warp .stand-btn .default-btn:hover {
@@ -5662,7 +5666,7 @@ Features  Hero  Warp  Style
 .features-hero-content .title {
   font-weight: 500;
   font-size: 16px;
-  color: #3921F5;
+  color: #2743FD;
   display: block;
   margin-bottom: 12px;
 }
@@ -5789,10 +5793,10 @@ Approach  Warp  Style
 Compare  Warp  Style
 ======================================================*/
 .cp-card.inner-plan .default-btn {
-  background: #3921F5;
+  background: #2743FD;
 }
 .cp-card.inner-plan .default-btn::after {
-  background: #3921F5;
+  background: #2743FD;
 }
 
 .compare-card {
@@ -5820,7 +5824,7 @@ Compare  Warp  Style
   margin-bottom: 20px;
 }
 .compare-card .default-btn {
-  background: #3921F5;
+  background: #2743FD;
   padding: 15px 28px;
   border: none;
   width: 100%;
@@ -6132,10 +6136,10 @@ Opening  Warp  Style
 }
 .inner-opening-warp .nav-pills .nav-item .nav-link.active {
   background-color: transparent;
-  color: #3921F5;
+  color: #2743FD;
 }
 .inner-opening-warp .nav-pills .nav-item .nav-link:hover {
-  color: #3921F5;
+  color: #2743FD;
 }
 .inner-opening-warp .opening-widget {
   background: #F8F9FC;
@@ -6281,10 +6285,10 @@ Apply  Warp  Style
 }
 .inner-apply-job .nav-pills .nav-item .nav-link.active {
   background-color: transparent;
-  color: #3921F5;
+  color: #2743FD;
 }
 .inner-apply-job .nav-pills .nav-item .nav-link:hover {
-  color: #3921F5;
+  color: #2743FD;
 }
 .inner-apply-job .nav-pills .nav-item::before {
   content: "";
@@ -6400,10 +6404,10 @@ Back Done  Warp  Style
 }
 .inner-backdone .nav-pills .nav-link.active {
   background-color: transparent;
-  color: #3921F5;
+  color: #2743FD;
 }
 .inner-backdone .nav-pills .nav-link:hover {
-  color: #3921F5;
+  color: #2743FD;
 }
 .inner-backdone .back-image {
   padding-right: 70px;
@@ -6686,10 +6690,10 @@ Portfolio  Warp  Style
 }
 .portfolio-warp .nav-pills .nav-link.active {
   background-color: transparent;
-  color: #3921F5;
+  color: #2743FD;
 }
 .portfolio-warp .nav-pills .nav-link:hover {
-  color: #3921F5;
+  color: #2743FD;
 }
 
 .portfolio-card {
@@ -6871,11 +6875,11 @@ Blog Warp  Style
   transition: all ease 0.5s;
 }
 .blog-big-widget .content h3 a:hover {
-  color: #3921F5;
+  color: #2743FD;
 }
 .blog-big-widget .content .read-more {
   text-decoration-line: underline;
-  color: #3921F5;
+  color: #2743FD;
   font-weight: 500;
 }
 .blog-big-widget img {
@@ -6926,7 +6930,7 @@ Blog Warp  Style
   transition: all ease 0.5s;
 }
 .blog-small-widget .content h3 a:hover {
-  color: #3921F5;
+  color: #2743FD;
 }
 .blog-small-widget .content .read-more {
   text-decoration-line: underline;
@@ -7083,7 +7087,7 @@ Blog Details  Style
   margin-bottom: 14px;
 }
 .blog-big-details .comments .comment-list .comment-content .reply {
-  color: #3921F5;
+  color: #2743FD;
 }
 .blog-big-details .reply-warp h3 {
   font-size: 30px;
@@ -7248,7 +7252,7 @@ Blog Details  Style
   margin-bottom: 0;
 }
 .blog-small-details .categories ul li:hover a {
-  color: #3921F5;
+  color: #2743FD;
   text-decoration-line: underline;
 }
 .blog-small-details .tags a {
@@ -7261,7 +7265,7 @@ Blog Details  Style
   transition: all ease 0.5s;
 }
 .blog-small-details .tags a:hover {
-  border-color: #3921F5;
+  border-color: #2743FD;
 }
 
 /*
@@ -7393,7 +7397,7 @@ Contact  Style
   padding: 12px 40px;
 }
 .error-area .error-content-wrap .default-btn:hover {
-  color: #3921F5;
+  color: #2743FD;
 }
 
 /*
@@ -7404,7 +7408,7 @@ Terms & Conditions Area Style
   text-align: center;
 }
 .terms-conditions .title span {
-  color: #3921F5;
+  color: #2743FD;
   display: block;
   margin-bottom: 10px;
 }
@@ -7447,7 +7451,7 @@ Terms & Conditions Area Style
   left: 0;
   top: 1px;
   font-size: 20px;
-  color: #3921F5;
+  color: #2743FD;
 }
 .terms-conditions .conditions-content h3 {
   margin-bottom: 15px;
@@ -7508,6 +7512,6 @@ Privacy Policy Area Style
   position: absolute;
   left: 0;
   top: 1px;
-  color: #3921F5;
+  color: #2743FD;
   font-size: 20px;
 }/*# sourceMappingURL=style.css.map */

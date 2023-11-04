@@ -20,26 +20,23 @@
         <meta property="og:title" content="@yield('title', 'PadiSwift - Swift Bills Payment, Data Purchase, Airtime Purchase, Followers and Subscribers Purchase')"/>
         <meta property="og:type" content="article"/>
         <meta property="og:description" content="@yield('description', 'PadiSwift - Swift Bills Payment, Data Purchase, Airtime Purchase, Followers and Subscribers Purchase')" />
-        <meta property="og:url" content="https://techocraft.com/">
-        <meta property="og:image" content="https://techocraft.com/img/techocraft_main_logo.png">
-        <meta property="og:image:secure_url" content="https://techocraft.com/img/techocraft_main_logo.png" />
+        <meta property="og:url" content="{{ url('') }}">
+        <meta property="og:image" content="{{ asset('assets/images/favicon.png') }}">
+        <meta property="og:image:secure_url" content="{{ asset('assets/images/favicon.png') }}" />
         <meta property="og:image:width" content="600" />
         <meta property="og:image:height" content="415" />
 
         <meta name="twitter:card" content="{{env('APP_NAME')}}"/>
         <meta name="twitter:title" content="@yield('title', 'PadiSwift - Swift Bills Payment, Data Purchase, Airtime Purchase, Followers and Subscribers Purchase')"/>
-        <meta name="twitter:url" content="http://techocraft.com/">
+        <meta name="twitter:url" content="{{ url('') }}">
         <meta name="twitter:description" content="@yield('description', 'PadiSwift - Swift Bills Payment, Data Purchase, Airtime Purchase, Followers and Subscribers Purchase')"/>
-        <meta name="twitter:image" content="https://techocraft.com/img/techocraft_main_logo.png"/>
-        <meta name="twitter:domain" content="https://techocraft.com/">
+        <meta name="twitter:image" content="{{ asset('assets/images/favicon.png') }}"/>
+        <meta name="twitter:domain" content="{{ url('') }}">
         <meta name="twitter:creator" content="{{env('APP_NAME')}}">
 
         <meta itemprop="name" content="{{env('APP_NAME')}}">
         <meta itemprop="description" content="@yield('description', 'PadiSwift - Swift Bills Payment, Data Purchase, Airtime Purchase, Followers and Subscribers Purchase')">
-        <meta itemprop="image" content="https://techocraft.com/img/techocraft_main_logo.png">
-
-        <link rel="icon" href="https://techocraft.com/img/techocraft_main_logo.png" type="image/x-icon">
-
+        <meta itemprop="image" content="{{ asset('assets/images/favicon.png') }}">
 
         <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{ asset('assets/css/remixicon.css') }}">
@@ -49,7 +46,7 @@
         <link rel="stylesheet" href="{{ asset('assets/css/navbar.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
-        <link rel="icon" type="image/svg" href="{{ asset('assets/images/favicon.svg') }}">
+        <link rel="icon" type="image/png" href="{{ asset('assets/images/favicon.png') }}">
     </head>
     <body>
     
