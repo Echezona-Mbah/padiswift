@@ -29,10 +29,18 @@ Route::get('/faq', function () {
     return view('faq');
 });
 
+Route::get('/blog', function () {
+    return view('blog');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
 Route::get('/policy', function () {
     return view('policy');
 });
 
-Route::get('/blog', function () {
-    return view('blog');
+Route::get('/terms', function () {
+    return view('terms');
 });
