@@ -15,37 +15,37 @@
                     <ul class="navbar-nav mx-auto style2">
 
                         <li class="nav-item">
-                            <a href="./" class="nav-link active">
+                            <a href="./" class="nav-link <?php print @$active1;?>">
                                 Home
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="about" class="nav-link">
+                            <a href="about" class="nav-link <?php print @$active2;?>">
                                 About 
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="services" class="nav-link">
+                            <a href="services" class="nav-link <?php print @$active3;?>">
                                 Services 
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="faq" class="nav-link">
+                            <a href="faq" class="nav-link <?php print @$active4;?>">
                                 FAQs 
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="blog" class="nav-link">
+                            <a href="blog" class="nav-link <?php print @$active5;?>">
                                 Blog 
                             </a>
                         </li>
                         
                         <li class="nav-item">
-                            <a href="contact" class="nav-link ">Contact 
+                            <a href="contact" class="nav-link <?php print @$active6;?>">Contact 
                                 <span>Us</span> </a>
                         </li>
                     </ul>
@@ -76,37 +76,37 @@
             <div class="accordion" id="navbarAccordion">
 
                 <div class="accordion-item">
-                    <a class="accordion-button without-icon active" href="./">
+                    <a class="accordion-button without-icon <?php print @$active1;?>" href="./">
                         Home
                     </a>
                 </div>
 
                 <div class="accordion-item">
-                    <a class="accordion-button without-icon" href="about">
+                    <a class="accordion-button without-icon <?php print @$active2;?>" href="about">
                         About
                     </a>
                 </div>
 
                 <div class="accordion-item">
-                    <a class="accordion-button without-icon" href="services">
+                    <a class="accordion-button without-icon <?php print @$active3;?>" href="services">
                         Services
                     </a>
                 </div>
 
                 <div class="accordion-item">
-                    <a class="accordion-button without-icon" href="faq">
+                    <a class="accordion-button without-icon <?php print @$active4;?>" href="faq">
                         FAQs
                     </a>
                 </div>
 
                 <div class="accordion-item">
-                    <a class="accordion-button without-icon" href="blog">
+                    <a class="accordion-button without-icon <?php print @$active5;?>" href="blog">
                         Blog
                     </a>
                 </div>
 
                 <div class="accordion-item">
-                    <a class="accordion-button without-icon" href="contact">
+                    <a class="accordion-button without-icon <?php print @$active6;?>" href="contact">
                         Contact Us
                     </a>
                 </div>

@@ -1,3 +1,4 @@
+<?php $active3='active';?>
 @extends('layout')
 @section('title', 'Services | Best Virtual Top Up, Data Purchase, Airtime Purchase, Followers and Subscribers Purchase Platform')
 @section('description', 'Home')
@@ -94,7 +95,7 @@
                                 <i class="flaticon-money"></i>
                             </div>
                             <h3><a>Betting Services</a></h3>
-                            <p>Feeling lucky? Place your bets confidently with PadiSwift's user-friendly and secure betting platform.</p>
+                            <p>Feeling lucky? Place your bets confidently with <span class="home-one-colory">{{env('APP_FN')}}</span>{{env('APP_LN')}}'s user-friendly and secure betting platform.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6" data-cue="slideInUp">
@@ -112,7 +113,7 @@
                                 <i class="flaticon-money"></i>
                             </div>
                             <h3><a>Book Flights and Travel Services</a></h3>
-                            <p>Explore the world with PadiSwift. Book flights and access a range of travel services hassle-free.</p>
+                            <p>Explore the world with <span class="home-one-colory">{{env('APP_FN')}}</span>{{env('APP_LN')}}. Book flights and access a range of travel services hassle-free.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6" data-cue="slideInUp">
@@ -130,7 +131,7 @@
                                 <i class="flaticon-money"></i>
                             </div>
                             <h3><a>Cashback Rewards</a></h3>
-                            <p>Get rewarded for every transaction! PadiSwift offers cashback to users for every successful transaction.</p>
+                            <p>Get rewarded for every transaction! <span class="home-one-colory">{{env('APP_FN')}}</span>{{env('APP_LN')}} offers cashback to users for every successful transaction.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6" data-cue="slideInUp">
@@ -139,7 +140,7 @@
                                 <i class="flaticon-money"></i>
                             </div>
                             <h3><a>Wallet</a></h3>
-                            <p>Enjoy seamless transactions with PadiSwift's digital wallet. Easily fund your wallet for quick and secure spending.</p>
+                            <p>Enjoy seamless transactions with <span class="home-one-colory">{{env('APP_FN')}}</span>{{env('APP_LN')}}'s digital wallet. Easily fund your wallet for quick and secure spending.</p>
                         </div>
                     </div>
 
@@ -149,7 +150,7 @@
                                 <i class="flaticon-money"></i>
                             </div>
                             <h3><a>Transfer</a></h3>
-                            <p>Transfer funds effortlessly with PadiSwift's wallet-to-wallet transfer feature. Send money to friends and family with just a few clicks.</p>
+                            <p>Transfer funds effortlessly with <span class="home-one-colory">{{env('APP_FN')}}</span>{{env('APP_LN')}}'s wallet-to-wallet transfer feature. Send money to friends and family with just a few clicks.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6" data-cue="slideInUp">
