@@ -45,4 +45,10 @@ Route::get('/terms', function () {
     return view('terms');
 });
 
+Route::get('/blog-detail', function () {
+    return view('blog-detail');
+});
 
+Route::get('/blog-detail2', function () {
+    return view('blog-detail2');
+});
