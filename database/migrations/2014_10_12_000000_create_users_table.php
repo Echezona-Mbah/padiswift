@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('padi_tag')->unique();
+            $table->string('padi_tag')->unique()->nullable();
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email')->unique();
@@ -29,11 +29,14 @@ return new class extends Migration
             $table->string('password')->nullable();
             $table->string('transaction_pin')->nullable();
             $table->string('referral_padi_tag')->nullable();
-            $table->string('secrity_login_otp')->nullable();
+            $table->string('security_login_otp')->nullable();
+            $table->string('login_otp_expires_at')->nullable();
             $table->string('email_verification_otp')->nullable();
             $table->string('email_verified_status')->default('no');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('forgot_password_code')->nullable();
+            $table->string('forgot_password_token')->nullable();
+            $table->string('forget_password_otp_expires_at')->nullable();
             $table->string('phone_verified_status')->default('no');
             $table->string('kyc_status')->default('pending'); //verified
             $table->string('kyc_id_type')->nullable();

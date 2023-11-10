@@ -18,9 +18,36 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
         'email',
         'password',
+        'padi_tag',
+        'phone',
+        'sex',
+        'dob',
+        'occupation',
+        'state_of_origin',
+        'country',
+        'home_address',
+        'wallet_balance',
+        'profile_picture',
+        'transaction_pin',
+        'referral_padi_tag',
+        'security_login_otp',
+        'login_otp_expires_at',
+        'email_verification_otp',
+        'email_verified_status',
+        'email_verified_at',
+        'forgot_password_code',
+        'forgot_password_token',
+        'forget_password_otp_expires_at',
+        'phone_verified_status',
+        'kyc_status',
+        'kyc_id_type',
+        'kyc_document',
+
+
     ];
 
     /**
