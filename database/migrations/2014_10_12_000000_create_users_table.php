@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('country')->nullable();
             $table->string('home_address')->nullable();
             $table->string('wallet_balance')->nullable();
+            $table->string('cashback_balance')->nullable();
             $table->string('profile_picture')->nullable();
             $table->string('password')->nullable();
             $table->string('transaction_pin')->nullable();

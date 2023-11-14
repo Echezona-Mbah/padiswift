@@ -37,7 +37,7 @@ class RegisterController extends Controller
 
         $token = $user->createToken('api-token')->plainTextToken;
 
-        return response()->json(['message' => "Registration successful. Please check your email for verification.$token"], 201);
+        return response()->json(['message' => "Registration was successful. Please check your email for verification.$token"], 201);
 
 
         // return response()->json(['token' => $token], 201);

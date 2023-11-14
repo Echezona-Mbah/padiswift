@@ -31,11 +31,8 @@ Route::post('/forget-verify-otp', [ForgetPasswordController::class, 'verifyOTP']
 Route::post('/reset-password', [ForgetPasswordController::class, 'resetPassword']);
 
 
-
-
 // Route::group(['middleware'=> ['auth:sanctum']],function(){
 //     Route::post('/request-otp', [LoginController::class, 'requestOTP'])->name('request-otp');
 //     Route::post('/verify-otp', [LoginController::class, 'verifyOTP']);
 
 // });
-
