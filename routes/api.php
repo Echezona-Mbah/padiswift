@@ -1,8 +1,12 @@
 <?php
 
+use App\Http\Controllers\User\AuthNewPasswordController;
 use App\Http\Controllers\User\ForgetPasswordController;
 use App\Http\Controllers\User\LoginController;
+use App\Http\Controllers\User\ProfileUpdatedController;
 use App\Http\Controllers\User\RegisterController;
+use App\Http\Controllers\User\TransactionPinController;
+use App\Http\Controllers\User\UploadPhotoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -29,13 +33,17 @@ Route::post('/verify-otp', [LoginController::class, 'verifyOTP']);
 Route::post('/forgot-password', [ForgetPasswordController::class, 'forgotPassword']);
 Route::post('/forget-verify-otp', [ForgetPasswordController::class, 'verifyOTP']);
 Route::post('/reset-password', [ForgetPasswordController::class, 'resetPassword']);
+// Route::post('/upload-photo', [PhotoController::class, 'uploadPhoto']);
 
 
 
+Route::group(['middleware'=> ['auth:sanctum']],function(){
+    Route::post('/uploadPhoto/{id}', [UploadPhotoController::class, 'updatePhoto']);
+    Route::post('/update-profile', [ProfileUpdatedController::class, 'updateProfile']);
+    Route::post('/create-transaction-pin', [TransactionPinController::class, 'CreteTransactionPin']);
+    Route::post('/update-transaction-pin', [TransactionPinController::class, 'updateTransactionPin']);
+    Route::post('/update-password', [AuthNewPasswordController::class, 'updatePassword']);
 
-// Route::group(['middleware'=> ['auth:sanctum']],function(){
-//     Route::post('/request-otp', [LoginController::class, 'requestOTP'])->name('request-otp');
-//     Route::post('/verify-otp', [LoginController::class, 'verifyOTP']);
 
-// });
+});
 

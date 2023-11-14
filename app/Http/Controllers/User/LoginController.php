@@ -54,7 +54,7 @@ class LoginController extends Controller
             ]);
             $token = $user->createToken('api-token')->plainTextToken;
 
-            return response()->json(['message' => 'Login successful','token' => $token],201);
+            return response()->json(['message' => 'Login successful','token' => $token,'user'=> $user],201);
         }
 
         return response()->json(['error' => 'Invalid OTP'], 401);

@@ -48,12 +48,15 @@ class ForgetPasswordController extends Controller
             return response()->json(['error' => 'Invalid or expired OTP'], 401);
         }
 
+        $token = $user->createToken('password-reset')->plainTextToken;
+
+
         $user->update([
             'forgot_password_code' => null,
             'forget_password_otp_expires_at' => null,
+            'forgot_password_token'=> $token,
         ]);
 
-        $token = $user->createToken('password-reset')->plainTextToken;
 
         return response()->json(['message' => 'OTP verified', 'token' => $token], 200);
     }
@@ -65,8 +68,7 @@ class ForgetPasswordController extends Controller
             'password' => 'required|string|min:6|confirmed',
         ]);
 
-        $user = $request->user();
-
+        $user = User::where('forgot_password_token', $request->token) ->first();
         if (!$user) {
             return response()->json(['error' => 'User not found'], 404);
         }
@@ -75,6 +77,7 @@ class ForgetPasswordController extends Controller
 
         $user->update([
             'password' => bcrypt($request->password),
+            "forgot_password_token"=> NULL,
         ]);
 
         return response()->json(['message' => 'Password reset successful'], 200);
