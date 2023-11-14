@@ -36,13 +36,6 @@ Route::post('/reset-password', [ForgetPasswordController::class, 'resetPassword'
 // Route::post('/upload-photo', [PhotoController::class, 'uploadPhoto']);
 
 
-<<<<<<< HEAD
-// Route::group(['middleware'=> ['auth:sanctum']],function(){
-//     Route::post('/request-otp', [LoginController::class, 'requestOTP'])->name('request-otp');
-//     Route::post('/verify-otp', [LoginController::class, 'verifyOTP']);
-
-// });
-=======
 
 Route::group(['middleware'=> ['auth:sanctum']],function(){
     Route::post('/uploadPhoto/{id}', [UploadPhotoController::class, 'updatePhoto']);
@@ -54,4 +47,3 @@ Route::group(['middleware'=> ['auth:sanctum']],function(){
 
 });
 
->>>>>>> 96621d8c43ac1fc8f97d9fc4116777ca5c5b8765
