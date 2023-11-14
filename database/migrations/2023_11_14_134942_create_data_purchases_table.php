@@ -11,18 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('airtimes', function (Blueprint $table) {
+        Schema::create('data_purchases', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('transactionId');
+            $table->string('ServiceName');
+            $table->string('serviceID');
             $table->string('requestId');
             $table->string('amount');
             $table->string('cashback')->nullable();
-            $table->string('product_name'); //"MTN Airtime VTU",
-            $table->string('type')->nullable(); //"Airtime Recharge"
+            $table->string('product_name'); //"MTN Data"
+            $table->string('type')->nullable(); //"Data Services"
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
-            $table->string('status')->default('pending');
+            $table->string('status');
             $table->foreign('user_id')
                 ->references('id')->on('users')
                 ->onDelete('cascade');
@@ -35,6 +37,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('airtimes');
+        Schema::dropIfExists('data_purchases');
     }
 };
