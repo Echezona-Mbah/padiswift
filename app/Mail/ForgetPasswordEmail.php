@@ -17,10 +17,13 @@ class ForgetPasswordEmail extends Mailable
      * Create a new message instance.
      */
     public $forgot_password_code;
+    public $user;
 
-    public function __construct($forgot_password_code)
+
+    public function __construct($forgot_password_code,$user)
     {
         $this->forgot_password_code = $forgot_password_code;
+        $this->user = $user;
     }
 
     /**

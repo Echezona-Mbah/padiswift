@@ -20,9 +20,13 @@ class RegisterOTPEmail extends Mailable
      */
     public $email_verification_otp;
 
-    public function __construct($email_verification_otp)
+    public $user;
+
+    public function __construct($email_verification_otp,$user)
     {
         $this->email_verification_otp = $email_verification_otp;
+        $this->user = $user;
+
     }
 
     /**

@@ -5,23 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Airtime extends Model
+class Topup extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'user_id',
-        'transactionId',
-        'requestId',
         'amount',
-        'cashback',
-        'product_name',
-        'type',
-        'email',
-        'phone',
         'status',
+        'topup_type',
+
+
     ];
 
-    protected $table ='airtimes';
+    protected $table ='topups';
 
     protected $primaryKey ='id';
 

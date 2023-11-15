@@ -29,7 +29,7 @@ class ForgetPasswordController extends Controller
             'forget_password_otp_expires_at' => $expirationTime,
         ]);
 
-        Mail::to($user->email)->send(new ForgetPasswordEmail($forgot_password_code));
+        Mail::to($user->email)->send(new ForgetPasswordEmail($forgot_password_code,$user));
 
         return response()->json(['message' => 'Password reset OTP sent']);
     }
@@ -57,6 +57,7 @@ class ForgetPasswordController extends Controller
             'forgot_password_token'=> $token,
         ]);
 
+        Mail::to($user->email)->send(new ForgetPasswordSuccessFUl($user));
 
         return response()->json(['message' => 'OTP verified', 'token' => $token], 200);
     }

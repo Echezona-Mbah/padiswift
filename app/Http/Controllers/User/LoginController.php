@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Mail\LoginOTPEmail;
+use App\Mail\LoginSuccessful;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -26,7 +27,7 @@ class LoginController extends Controller
                 'security_login_otp' => $security_login_otp,
                 'login_otp_expires_at' => $expirationTime,
             ]);
-            Mail::to($user->email)->send(new LoginOTPEmail($security_login_otp));
+            Mail::to($user->email)->send(new LoginOTPEmail($security_login_otp,$user));
 
             return response()->json(['message' => 'OTP verification required'],201);
         }
@@ -49,16 +50,15 @@ class LoginController extends Controller
         }
 
         if ($user->security_login_otp === $request->otp) {
-            $user->update([
-                'security_login_otp' => $request->otp,
-            ]);
             $token = $user->createToken('api-token')->plainTextToken;
+            Mail::to($user->email)->send(new LoginSuccessful($user));
 
-            return response()->json(['message' => 'Login successful','token' => $token,'user'=> $user],201);
+            return response()->json(['message' => 'Login successful', 'token' => $token, 'user' => $user], 201);
         }
 
         return response()->json(['error' => 'Invalid OTP'], 401);
     }
+
 
 
     private function generateOTP()

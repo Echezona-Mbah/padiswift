@@ -69,4 +69,17 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    protected $table ='users';
+    protected $primaryKey ='id';
+
+    public function topups()
+    {
+        return $this->hasMany(Topup::class);
+    }
+
+    public function airtimes()
+    {
+        return $this->hasMany(Airtime::class);
+    }
 }

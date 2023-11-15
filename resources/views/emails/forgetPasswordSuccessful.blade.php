@@ -51,11 +51,11 @@
     <div class="container">
         <img src="{{ asset('images/logo-main.png') }}" alt="Company Logo" style="max-width: 60%; margin-bottom: 20px;">
 
-        <h1>Your PadiSwift Login OTP 🌐</h1>
+        <h1>Your PadiSwift Password Has Been Reset ✨</h1>
         <h3>Dear {{ $user->first_name }}!,</h3>
-        <p>To enhance the security of your PadiSwift account, please use the following One-Time Password (OTP) to complete your login:</p>
-        <p>Your OTP:{{ $security_login_otp }}</p>
-        <p>Thank you for choosing PadiSwift. Your security is our priority.</p>
+        <p>Congratulations! Your PadiSwift password has been successfully reset. You're all set to enjoy seamless transactions and convenience once again. </p>
+        <p>If you have any questions or concerns, please don't hesitate to contact our support team. We're here to assist you every step of the way.</p>
+        <p>Thank you for choosing PadiSwift. Your security and satisfaction are our top priorities.</p>
         <p>Best Regards,
         </p>
         <p>The PadiSwift Team</p>
@@ -72,19 +72,3 @@
     </div>
 </body>
 </html>
-
-
-{{-- <!DOCTYPE html>
-<html>
-<head>
-    <title>OTP Email</title>
-</head>
-<body>
-    <div>
-        <p>Dear User,</p>
-        <p>Your OTP code is: <strong>{{ $security_login_otp }}</strong></p>
-        <p>Please use this OTP code to verify your identity.</p>
-        <p>Thank you for using our service.</p>
-    </div>
-</body>
-</html> --}}

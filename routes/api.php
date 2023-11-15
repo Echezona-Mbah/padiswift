@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\Airtime\AirtimeController;
 use App\Http\Controllers\User\AuthNewPasswordController;
 use App\Http\Controllers\User\ForgetPasswordController;
 use App\Http\Controllers\User\LoginController;
 use App\Http\Controllers\User\ProfileUpdatedController;
 use App\Http\Controllers\User\RegisterController;
+use App\Http\Controllers\User\TopUpController;
 use App\Http\Controllers\User\TransactionPinController;
 use App\Http\Controllers\User\UploadPhotoController;
 use Illuminate\Http\Request;
@@ -43,7 +45,9 @@ Route::group(['middleware'=> ['auth:sanctum']],function(){
     Route::post('/create-transaction-pin', [TransactionPinController::class, 'CreteTransactionPin']);
     Route::post('/update-transaction-pin', [TransactionPinController::class, 'updateTransactionPin']);
     Route::post('/update-password', [AuthNewPasswordController::class, 'updatePassword']);
+    Route::post('/top-up', [TopUpController::class, 'topUp']);
+    Route::post('/bank-transfer', [TopUpController::class, 'initiateBankTransfer']);
+    Route::post('/airtime', [AirtimeController::class, 'recharge'])->name('airtime');
 
 
 });
-

@@ -33,7 +33,7 @@ class RegisterController extends Controller
         $user->email_verification_otp = $email_verification_otp;
         $user->save();
 
-        Mail::to($user->email)->send(new RegisterOTPEmail($email_verification_otp));
+        Mail::to($user->email)->send(new RegisterOTPEmail($email_verification_otp,$user));
 
         $token = $user->createToken('api-token')->plainTextToken;
 

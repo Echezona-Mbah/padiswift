@@ -9,21 +9,19 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class LoginOTPEmail extends Mailable
+class ForgetPasswordSuccessFUl extends Mailable
 {
     use Queueable, SerializesModels;
 
     /**
      * Create a new message instance.
      */
-    public $security_login_otp;
     public $user;
 
-
-    public function __construct($security_login_otp,$user)
+    public function __construct($user)
     {
-        $this->security_login_otp = $security_login_otp;
         $this->user = $user;
+
     }
 
     /**
@@ -32,7 +30,7 @@ class LoginOTPEmail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Login O T P Email',
+            subject: 'Forget Password Success F Ul',
         );
     }
 
@@ -42,7 +40,7 @@ class LoginOTPEmail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'emails.loginOtp',
+            view: 'email.forgetPasswordSuccessful',
         );
     }
 
