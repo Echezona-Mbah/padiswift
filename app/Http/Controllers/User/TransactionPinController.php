@@ -38,7 +38,7 @@ class TransactionPinController extends Controller
             'pin' => 'required|digits:6',
         ]);
         $user->update([
-            'transaction_pin' => $request->pin,
+            'transaction_pin' =>bcrypt( $request->pin),
         ]);
 
         return response()->json(['message' => 'Transaction PIN updated successfully', 'user' => $user], 200);

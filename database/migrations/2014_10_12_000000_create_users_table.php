@@ -33,6 +33,7 @@ return new class extends Migration
             $table->string('security_login_otp')->nullable();
             $table->string('login_otp_expires_at')->nullable();
             $table->string('email_verification_otp')->nullable();
+            $table->string('email_verification_otp_expires_at')->nullable();
             $table->string('email_verified_status')->default('no');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('forgot_password_code')->nullable();

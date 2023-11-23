@@ -51,13 +51,8 @@
 
         <h1>Verify Your PadiSwift Account🌟 </h1>
         <h3>Dear {{ $user->first_name }}!,</h3>
-        <p>Welcome to PadiSwift! To ensure the security of your account, please use the following One-Time Password (OTP) to complete the verification process:</p>
-        <p>Your OTP: {{ $email_verification_otp }} </p>
-        <p>This code will expire in [X] minutes, so please enter it promptly. If you did not request this verification, please disregard this email.
-        </p>
-        <p>If you have any questions or need assistance, our support team is ready to help. Simply reply to this email, and we'll be in touch
-        </p>
-        <p>Thank you for choosing PadiSwift. We look forward to providing you with a seamless and secure experience.
+        <h3>Your One-Time Password (OTP): {{ $email_verification_otp }} </h3>
+        <p>Thank you for choosing PadiSwift.
         </p>
         <p>Best Regards,
         </p>

@@ -28,6 +28,11 @@ class Airtime extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class,'user_id');
     }
+
+    // public function data_purchases()
+    // {
+    //     return $this->hasMany(DataPurchase::class);
+    // }
 }

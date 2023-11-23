@@ -20,6 +20,10 @@ class LoginController extends Controller
 
         $user = User::where('email', $request->email)->first();
 
+        if ($user->email_verified_status == 'no') {
+            return response()->json(['error' => 'Email verification required'], 401);
+        }
+
         if ($user && password_verify($request->password, $user->password)) {
             $security_login_otp = $this->generateOTP();
             $expirationTime = now()->addMinutes(5);

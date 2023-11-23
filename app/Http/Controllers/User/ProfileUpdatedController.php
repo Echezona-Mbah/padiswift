@@ -52,6 +52,10 @@ class ProfileUpdatedController extends Controller
 
     private function updateProfilePicture($user, $file)
     {
+        Storage::disk('public')->deleteDirectory('profile_pictures');
+
+        Storage::disk('public')->makeDirectory('profile_pictures');
+
         if ($user->profile_picture) {
             Storage::disk('public')->delete('profile_pictures/' . $user->profile_picture);
         }

@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class WalletTransfer extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'user_id',
+        'amount',
+        'status',
+        'sender_padi_tag',
+        'reciever_padi_tag',
+    ];
+    
 }
