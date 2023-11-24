@@ -66,11 +66,15 @@ class ElectricityController extends Controller
             'variation_code'=> 'required',
             'amount'=> 'required',
             'phone_number'=> 'required',
+            'name'=> 'required',
+
+
        ]);
        $user = Auth::user();
        $user_id = Auth::user()->id;
        if($user->wallet_balance < $request->amount){
         return response()->json(['message' => 'Insufficient funds'], 400);
+       }
         try {
             $response = $this->authoriz()->post('/pay', [
                'billersCode' => $request->billersCode,
@@ -78,11 +82,14 @@ class ElectricityController extends Controller
                'variation_code' => $request->variation_code,
                'amount' => $request->amount,
                'phone' => $request->phone_number,
+               'name' => $request->name,
                'request_id' => $this->generateUnixTimestamp(),
 
            ]);
 
            $responseData = $response->json();
+           dd($responseData);die();
+
            $product_name = $responseData['content']['transactions']['product_name'];
             $unique_element = $responseData['content']['transactions']['unique_element'];
             $unit_price = $responseData['content']['transactions']['unit_price'];
@@ -99,7 +106,7 @@ class ElectricityController extends Controller
             $customerName = $responseData['customerName'];
             $units = $responseData['units'];
             $code = $responseData['code'];
-         // dd($responseData);die();
+          dd($responseData);die();
 
             if($request->serviceID === 'ikeja-electric'){
                 $Qcommission = CommisionSettings::all();

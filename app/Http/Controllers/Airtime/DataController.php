@@ -55,43 +55,66 @@ public function getVariationCodes(Request $request)
 
 public function data(Request $request)
 {
+//     $userId = 'CK10344578';
+// $apiKey = 'MR69GEQE20W28176674W09H3923GQPGA4AH7VJCA21QND02BP31263VD3IUAD05H';
+
+// $mobileNetwork = 'MTN';
+// $dataPlan = 'dataplan_size';
+// $mobileNumber = '08035249716';
+// $requestId = '34942rjdsnewu';
+// $callbackUrl = 'https://www.vtpass.com/insurance';
+
+// $response = Http::get('https://www.nellobytesystems.com/APIDatabundleV1.asp', [
+//     'UserID' => $userId,
+//     'APIKey' => $apiKey,
+//     'MobileNetwork' => $mobileNetwork,
+//     'DataPlan' => $dataPlan,
+//     'MobileNumber' => $mobileNumber,
+//     'RequestID' => $requestId,
+//     'CallBackURL' => $callbackUrl,
+// ]);
+
+// // Assuming you want to log the response for debugging purposes
+// info('API Response:', [
+//     'headers' => $response->headers(),
+//     'body' => $response->body(),
+// ]);
+// die();
     $request->validate([
-        'phone_number'=> 'required',
-       'variation_code'=> 'required',
-       'service_id'=> 'required',
-       'amount'=> 'required',
+        'MobileNumber' => 'required',
+        'MobileNetwork' => 'required',
+        'DataPlan' => 'required',
+    ]);
 
+    $clubkonnetUserId = env('CLUB_KONNECT_USER');
+    $clubkonnetApiKey = env('CLUB_KONNECT_KEY');
 
-   ]);
-
-   $user = Auth::user();
-   $user_id = Auth::user()->id;
-   if($user->wallet_balance < $request->amount){
-    return response()->json(['message' => 'Insufficient funds'], 400);
-   }
-
-    $phoneNumber = $request->input('phone_number');
-    $variation_code = $request->input('variation_code');
-    $selectedNetwork = $request->input('service_id');
-    $amount = $request->input('amount');
-
+    $mobileNumber = $request->MobileNumber;
+    $mobileNetwork = $request->MobileNetwork;
+    $dataPlan = $request->DataPlan;
+    $requestId = '27eyd8e89';
+    $callbackUrl = 'https://www.vtpass.com/insurance';
 
     $response = Http::withHeaders([
-        'api-key' => env('VTPASS_TEST_KEY'),
-        'secret-key' => env('VTPASS_SECRET_KEY'),
         'Content-Type' => 'application/json',
-    ])->post('https://sandbox.vtpass.com/api/pay', [
-        'phone' => $phoneNumber,
-        'amount' => $amount,
-        'serviceID' => $selectedNetwork,
-        'variation_code' => $variation_code,
-        'request_id' => $this->generateUnixTimestamp(),
+    ])->get('https://www.nellobytesystems.com/APIDatabundleV1.asp', [
+        'UserID' => $clubkonnetUserId,
+        'APIKey' => $clubkonnetApiKey,
+        'MobileNumber' => $mobileNumber,
+        'DataPlan' => $dataPlan,
+        'MobileNetwork' => $mobileNetwork,
+        'CallBackURL' => $callbackUrl,
+        'RequestID' => $requestId,
+    ]);
 
-
+    info('API Response:', [
+        'headers' => $response->headers(),
+        'body' => $response->body(),
     ]);
 
 
     $responseData = $response->json();
+    dd( $responseData);die();
     $status = $responseData['content']['transactions']['status'];
         $product_name = $responseData['content']['transactions']['product_name'];
         $type = $responseData['content']['transactions']['type'];

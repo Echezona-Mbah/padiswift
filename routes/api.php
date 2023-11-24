@@ -65,7 +65,7 @@ Route::group(['middleware'=> ['auth:sanctum']],function(){
     Route::post('/airtime', [AirtimeController::class, 'recharge'])->name('airtime');
     Route::get('/user/airtime-history', [AirtimeController::class, 'getAirtimeHistory']);
     Route::post('/getVariationCodes', [DataController::class, 'getVariationCodes']);
-    Route::post('/data', [DataController::class, 'data']);
+    Route::post('/data', [DataController::class, 'data'])->name('data');
     Route::get('/user/data-history', [DataController::class, 'getDateHistory']);
     Route::get('/airtime-data',[AirtimeController::class, 'index']);
     Route::post('/smart-card', [TVSubscriptionController::class, 'verifyDSTVSmartcard']);
