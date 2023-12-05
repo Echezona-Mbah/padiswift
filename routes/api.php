@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Airtime\AirtimeController;
 use App\Http\Controllers\Airtime\DataController;
+use App\Http\Controllers\Airtime\NetWorkImages;
 use App\Http\Controllers\Education\WeacRegisterController;
 use App\Http\Controllers\Education\WeacResultCheckController;
 use App\Http\Controllers\Electricity\ElectricityController;
@@ -37,10 +38,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('/register', [RegisterController::class, 'register']);
-Route::post('/verify-email', [RegisterController::class, 'verifyEmail']);
+Route::post('/verify-email/{email}', [RegisterController::class, 'verifyEmail']);
 Route::post('/verify-email-otp/{email}', [RegisterController::class, 'verifyEmailOtp']);
 Route::post('/login', [LoginController::class, 'login']);
-Route::post('/verify-otp', [LoginController::class, 'verifyOTP']);
+Route::post('/verify-otp/{email}', [LoginController::class, 'verifyOTP']);
 Route::delete('/deleteUser/{email}', [RegisterController::class, 'deleteUser']);
 
 
@@ -52,21 +53,23 @@ Route::post('/reset-password', [ForgetPasswordController::class, 'resetPassword'
 
 
 Route::group(['middleware'=> ['auth:sanctum']],function(){
+    Route::post('/upload-network-image', [NetWorkImages::class, 'store']);
     Route::get('/user/{id}', [RegisterController::class, 'show']);
     Route::post('/uploadPhoto/{id}', [UploadPhotoController::class, 'updatePhoto']);
     Route::post('/update-profile', [ProfileUpdatedController::class, 'updateProfile']);
     Route::post('/create-transaction-pin', [TransactionPinController::class, 'CreteTransactionPin']);
     Route::post('/update-transaction-pin', [TransactionPinController::class, 'updateTransactionPin']);
     Route::post('/update-paditag', [PadiTagController::class, 'updatePaditag']);
+    Route::get('/get-user-by-padi-tag/{padiTag}', [PadiTagController::class, 'getUserByPadiTag']);
     Route::post('/wallect', [WallectTransferContrroller::class, 'transfer']);
     Route::post('/update-password', [AuthNewPasswordController::class, 'updatePassword']);
     Route::post('/bank-transfer', [TopUpController::class, 'backTransfer']);
     Route::post('/card', [TopUpController::class, 'card']);
     Route::post('/airtime', [AirtimeController::class, 'recharge'])->name('airtime');
-    Route::get('/user/airtime-history', [AirtimeController::class, 'getAirtimeHistory']);
-    Route::post('/getVariationCodes', [DataController::class, 'getVariationCodes']);
+    Route::get('/airtime/airtime-history', [AirtimeController::class, 'getAirtimeHistory']);
+    Route::get('/getVariationCodes', [DataController::class, 'getVariationCodes']);
     Route::post('/data', [DataController::class, 'data'])->name('data');
-    Route::get('/user/data-history', [DataController::class, 'getDateHistory']);
+    Route::get('/data/data-history', [DataController::class, 'getDateHistory']);
     Route::get('/airtime-data',[AirtimeController::class, 'index']);
     Route::post('/smart-card', [TVSubscriptionController::class, 'verifyDSTVSmartcard']);
     Route::post('/getVariationCodes', [TVSubscriptionController::class, 'getVariationCodes']);
@@ -80,6 +83,10 @@ Route::group(['middleware'=> ['auth:sanctum']],function(){
     Route::get('/getWeacCheckHistory', [WeacResultCheckController::class, 'getWeacCheckHistory']);
     Route::post('/verify-payment-pin', [VerifyPinController::class, 'verifyPinApi']);
     Route::post('/unblock-account', [VerifyPinController::class, 'requestUnblock']);
+    Route::get('/getAllTable', [DataController::class, 'getAllTable']);
+    Route::get('/getSupportedNetworks', [NetWorkImages::class, 'getSupportedNetworks']);
+
+
 
 
 

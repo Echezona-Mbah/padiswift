@@ -39,15 +39,16 @@ class LoginController extends Controller
         return response()->json(['error' => 'Invalid credentials'], 401);
     }
 
-    public function verifyOTP(Request $request)
+    public function verifyOTP(Request $request, $email)
     {
         $request->validate([
             'otp' => 'required|string|min:4',
         ]);
 
-        $user = User::where('security_login_otp', $request->otp)
-                    ->where('login_otp_expires_at', '>', now())
-                    ->first();
+        $user = User::where('email', $email)
+            ->where('security_login_otp', $request->otp)
+            ->where('login_otp_expires_at', '>', now())
+            ->first();
 
         if (!$user) {
             return response()->json(['error' => 'Invalid or expired OTP'], 404);
@@ -56,6 +57,7 @@ class LoginController extends Controller
         if ($user->security_login_otp === $request->otp) {
             $token = $user->createToken('api-token')->plainTextToken;
             Mail::to($user->email)->send(new LoginSuccessful($user));
+            $user->makeHidden(['email_verification_otp', 'security_login_otp']);
 
             return response()->json(['message' => 'Login successful', 'token' => $token, 'user' => $user], 201);
         }

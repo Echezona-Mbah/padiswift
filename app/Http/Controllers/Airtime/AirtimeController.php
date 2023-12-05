@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Airtime;
 use App\Models\CommisionSettings;
 use App\Models\User;
+use App\Notifications\AirtimeNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -31,11 +32,21 @@ class AirtimeController extends Controller
             'phone_number'=> 'required',
            'amount'=> 'required',
            'network'=> 'required',
+           'pin'=> 'required',
+
 
        ]);
 
         $user = Auth::user();
         $user_id = Auth::user()->id;
+        if($user->transaction_pin == null){
+            return response()->json(['message' => 'Set pin'], 400);
+           }
+
+        if (!$this->verifyPin($user, $request->pin)) {
+            return response()->json(['error' => 'Incorrect PIN'], 401);
+        }
+
         if($user->wallet_balance < $request->amount){
          return response()->json(['message' => 'Insufficient funds'], 400);
         }
@@ -72,7 +83,7 @@ class AirtimeController extends Controller
         if($request->network === 'mtn'){
             $Qcommission = CommisionSettings::all();
             $firstItem = $Qcommission->first();
-            $mtncommission = ($request->amount/100)*$firstItem->mtn;
+            $mtncommission = ($request->amount/100)*2;
             if ($code == '000') {
                 $Airtime = Airtime::create([
                     'user_id' =>$user_id,
@@ -96,6 +107,7 @@ class AirtimeController extends Controller
                     'wallet_balance' => $balancewallet,
                 ]);
                 $user->save();
+                $user->notify(new AirtimeNotification());
 
 
                 return response()->json(['message' => 'Airtime recharge successful','detail' =>$Airtime]);
@@ -107,7 +119,7 @@ class AirtimeController extends Controller
         if($request->network === 'glo'){
             $Qcommission = CommisionSettings::all();
             $firstItem = $Qcommission->first();
-            $mtncommission = ($request->amount/100)*$firstItem->glo;
+            $mtncommission = ($request->amount/100)*2;
             if ($code == '000') {
                 $Airtime = Airtime::create([
                     'user_id' =>$user_id,
@@ -130,6 +142,7 @@ class AirtimeController extends Controller
                     'wallet_balance' => $balancewallet,
                 ]);
                 $user->save();
+                $user->notify(new AirtimeNotification());
 
                 return response()->json(['message' => 'Airtime recharge successful','detail' =>$Airtime]);
             }else {
@@ -140,7 +153,7 @@ class AirtimeController extends Controller
         if($request->network === 'airtel'){
             $Qcommission = CommisionSettings::all();
             $firstItem = $Qcommission->first();
-            $mtncommission = ($request->amount/100)*$firstItem->airtel;
+            $mtncommission = ($request->amount/100)*2;
             if ($code == '000') {
                 $Airtime = Airtime::create([
                     'user_id' =>$user_id,
@@ -163,6 +176,7 @@ class AirtimeController extends Controller
                     'wallet_balance' => $balancewallet,
                 ]);
                 $user->save();
+                $user->notify(new AirtimeNotification());
 
                 return response()->json(['message' => 'Airtime recharge successful','detail' =>$Airtime]);
             }else {
@@ -173,7 +187,7 @@ class AirtimeController extends Controller
         if($request->network === 'etisalat'){
             $Qcommission = CommisionSettings::all();
             $firstItem = $Qcommission->first();
-            $mtncommission = ($request->amount/100)*$firstItem->etisalat;
+            $mtncommission = ($request->amount/100)*2;
             if ($code == '000') {
                 $Airtime = Airtime::create([
                     'user_id' =>$user_id,
@@ -196,6 +210,7 @@ class AirtimeController extends Controller
                     'wallet_balance' => $balancewallet,
                 ]);
                 $user->save();
+                $user->notify(new AirtimeNotification());
 
                 return response()->json(['message' => 'Airtime recharge successful','detail' =>$Airtime]);
             }else {
@@ -204,22 +219,26 @@ class AirtimeController extends Controller
         }
 
 
-        // if ($firstItem) {
-        //     $columnNames = array_keys($firstItem->getAttributes());
-        //     $mtnColumnName = $columnNames[1];
-        //     $filteredCommission = CommisionSettings::whereRaw("$mtnColumnName = '3'")->first();
-        //     dd($filteredCommission);die();
-        // }
-
     }
 
     public function index()
     {
-        $usersWithData = User::with(['airtimes', 'data_purchases'])->get();
-        // dd($usersWithData);die();
+        $user = Auth::user();
+        if (!$user) {
+            return response()->json(['error' => 'User not authenticated'], 401);
+        }
 
-        return response()->json($usersWithData);
+        $usersWithData = User::with(['airtimes', 'data_purchases'])->where('id', $user->id)->get();
+        $filteredData = $usersWithData->map(function ($user) {
+            return [
+                'airtimes' => $user->airtimes,
+                'data_purchases' => $user->data_purchases,
+            ];
+        });
+
+        return response()->json($filteredData);
     }
+
 
         private function verifyPin($user, $enteredPin)
     {
@@ -229,16 +248,16 @@ class AirtimeController extends Controller
     }
 
     public function getAirtimeHistory()
-{
-    $user = Auth::user();
+        {
+            $user = Auth::user();
 
-    if (!$user) {
-        return response()->json(['error' => 'User not authenticated'], 401);
-    }
-    $airtimeHistory = Airtime::where('user_id', $user->id)->orderBy('created_at', 'desc')->get();
+            if (!$user) {
+                return response()->json(['error' => 'User not authenticated'], 401);
+            }
+            $airtimeHistory = Airtime::where('user_id', $user->id)->orderBy('created_at', 'desc')->get();
 
-    return response()->json(['airtime_history' => $airtimeHistory], 200);
-}
+            return response()->json(['airtime_history' => $airtimeHistory], 200);
+        }
 
     // public function index()
     // {
@@ -280,5 +299,6 @@ class AirtimeController extends Controller
 
     //     return response()->json($formattedResponse);
     // }
+
 
 }

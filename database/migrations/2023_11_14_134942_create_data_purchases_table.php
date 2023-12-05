@@ -15,13 +15,10 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('transactionId');
-            $table->string('ServiceName');
             $table->string('serviceID');
-            $table->string('requestId');
             $table->string('amount');
             $table->string('cashback')->nullable();
             $table->string('product_name'); //"MTN Data"
-            $table->string('type')->nullable(); //"Data Services"
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
             $table->string('status');

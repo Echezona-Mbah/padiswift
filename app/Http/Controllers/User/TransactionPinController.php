@@ -35,7 +35,7 @@ class TransactionPinController extends Controller
         }
 
         $request->validate([
-            'pin' => 'required|digits:6',
+            'pin' => 'required|digits:4',
         ]);
         $user->update([
             'transaction_pin' =>bcrypt( $request->pin),

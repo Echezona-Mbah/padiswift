@@ -11,15 +11,12 @@ class DataPurchase extends Model
     protected $fillable = [
         'user_id',
         'transactionId',
-        'requestId',
         'amount',
         'cashback',
         'product_name',
-        'type',
         'email',
         'phone',
         'status',
-        'ServiceName',
         'serviceID',
     ];
 

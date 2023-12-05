@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('state_of_origin')->nullable();
             $table->string('country')->nullable();
             $table->string('home_address')->nullable();
-            $table->string('wallet_balance')->nullable();
+            $table->string('wallet_balance')->default(0);
             $table->string('cashback_balance')->nullable();
             $table->string('profile_picture')->nullable();
             $table->string('password')->nullable();

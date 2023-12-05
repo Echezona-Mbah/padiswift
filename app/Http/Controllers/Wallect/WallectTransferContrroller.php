@@ -20,8 +20,12 @@ class WallectTransferContrroller extends Controller
         $user = Auth::user();
         $sourceUser = User::where('padi_tag',$request->padi_tag)->first();
 
+        if($user->wallet_balance < $request->amount){
+            return response()->json(['message' => 'Insufficient funds'], 400);
+           }
+
         if (!$sourceUser || !$user) {
-            return response()->json(['error' => 'User not found'], 404);
+            return response()->json(['error' => 'Paditage not found'], 404);
         }
 
         if ($user->wallet_balance < $request->amount) {

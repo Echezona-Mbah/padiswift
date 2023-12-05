@@ -53,31 +53,31 @@ class RegisterController extends Controller
         return rand(1000, 9999);
     }
 
-    public function verifyEmail(Request $request)
+    public function verifyEmail(Request $request, $email)
     {
         $request->validate([
             'otp' => 'required|string|min:4',
         ]);
-        $user = User::where('email_verification_otp', $request->otp)
-        ->where('email_verification_otp_expires_at', '>', now())
-        ->first();
+
+        $user = User::where('email', $email)
+            ->where('email_verification_otp', $request->otp)
+            ->where('email_verification_otp_expires_at', '>', now())
+            ->first();
 
         if (!$user) {
             return response()->json(['error' => 'Invalid or expired OTP'], 422);
         }
 
-        if ($user->email_verified_at !== null) {
+        if ($user->email_verified_status !== 'no') {
             return response()->json(['message' => 'Email already verified']);
         }
 
-        // Mark the email as verified
         $user->update([
             'email_verified_at' => now(),
             'email_verified_status' => 'yes',
         ]);
-        // $token = $user->createToken('api-token')->plainTextToken;
 
-        return response()->json(['message' => 'Email verified successfully']);
+        return response()->json(['message' => 'Email verified successfully', 'email' => $user->email]);
     }
 
     public function verifyEmailOtp($email)

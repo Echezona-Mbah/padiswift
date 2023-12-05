@@ -17,9 +17,8 @@ class ProfileUpdatedController extends Controller
         }
 
         $request->validate([
-            'first_name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
+            'first_name' => 'string|max:255',
+            'last_name' => 'string|max:255',
             'phone' => 'nullable|string',
             'sex' => 'nullable|string|in:female,male',
             'dob' => 'nullable|date',
@@ -33,7 +32,6 @@ class ProfileUpdatedController extends Controller
         $user->update ([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
-            'email' => $request->email,
             'phone' => $request->phone,
             'sex' => $request->sex,
             'dob' => $request->dob,
@@ -52,6 +50,10 @@ class ProfileUpdatedController extends Controller
 
     private function updateProfilePicture($user, $file)
     {
+        $user = Auth::user();
+        if (!$user) {
+            return response()->json(['error' => 'Unauthenticated'], 401);
+        }
         Storage::disk('public')->deleteDirectory('profile_pictures');
 
         Storage::disk('public')->makeDirectory('profile_pictures');

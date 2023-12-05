@@ -19,6 +19,10 @@ return new class extends Migration
             $table->string('site_whatsapp_number')->nullable();
             $table->string('site_email')->nullable();
             $table->string('site_office_address')->nullable();
+            $table->string('MTN')->nullable();
+            $table->string('9mobile')->nullable();
+            $table->string('Airtime')->nullable();
+            $table->string('Glo')->nullable();
             $table->string('site_facebook_link')->nullable();
             $table->string('site_instagram_link')->nullable();
             $table->string('site_linkedin_link')->nullable();
