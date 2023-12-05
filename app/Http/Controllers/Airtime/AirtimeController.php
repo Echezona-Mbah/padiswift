@@ -259,46 +259,5 @@ class AirtimeController extends Controller
             return response()->json(['airtime_history' => $airtimeHistory], 200);
         }
 
-    // public function index()
-    // {
-    //     $usersWithData = User::with(['airtimes', 'data_purchases'])->get();
-
-    //     $formattedResponse = [];
-
-    //     foreach ($usersWithData as $user) {
-    //         $formattedResponse[] = [
-    //             'user_id' => $user->id,
-    //             'user_details' => [
-    //                 'name' => $user->name,
-    //                 'email' => $user->email,
-    //             ],
-    //             'airtimes' => $user->airtimes->map(function ($airtime) {
-    //                 return [
-    //                     'airtime_id' => $airtime->id,
-    //                     'airtime_details' => [
-    //                         // Include specific airtime details you want in the response
-    //                         'column_name_1' => $airtime->column_name_1,
-    //                         'column_name_2' => $airtime->column_name_2,
-    //                         // ...
-    //                     ],
-    //                 ];
-    //             }),
-    //             'data_purchases' => $user->data_purchases->map(function ($dataPurchase) {
-    //                 return [
-    //                     'data_purchase_id' => $dataPurchase->id,
-    //                     'data_purchase_details' => [
-    //                         // Include specific data purchase details you want in the response
-    //                         'column_name_1' => $dataPurchase->column_name_1,
-    //                         'column_name_2' => $dataPurchase->column_name_2,
-    //                         // ...
-    //                     ],
-    //                 ];
-    //             }),
-    //         ];
-    //     }
-
-    //     return response()->json($formattedResponse);
-    // }
-
 
 }
