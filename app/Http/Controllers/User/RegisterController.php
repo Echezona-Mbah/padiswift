@@ -6,23 +6,27 @@ use App\Http\Controllers\Controller;
 use App\Mail\RegisterOTPEmail;
 use App\Mail\WelcomeEmail;
 use App\Models\User;
+use Illuminate\Console\View\Components\Alert;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use RealRashid\SweetAlert\Facades\Alert as FacadesAlert;
 
 class RegisterController extends Controller
 {
     public function register(Request $request)
     {
         $request->validate([
-            'firstName' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
             'lastName' => 'required|string|max:255',
             'email' => 'required|string|email|unique:users|max:255',
             'password' => 'required|string|min:6|confirmed',
         ]);
 
+        dd($request->name);die();
+
         $user = User::create([
-            'first_name' => $request->firstName,
+            'first_name' => $request->name,
             'last_name' => $request->lastName,
             'email' => $request->email,
             'password' => bcrypt($request->password),
@@ -40,7 +44,6 @@ class RegisterController extends Controller
         Mail::to($user->email)->send(new RegisterOTPEmail($email_verification_otp,$user));
 
         $token = $user->createToken('api-token')->plainTextToken;
-
         return response()->json(['message' => "Registration was successful. Please check your email for verification","details" => "$token"], 201);
 
 

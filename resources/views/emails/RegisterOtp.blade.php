@@ -50,7 +50,7 @@
         <img src="{{ asset('images/logo-main.png') }}" alt="Company Logo" style="max-width: 60%; margin-bottom: 20px;">
 
         <h1>Verify Your PadiSwift Account🌟 </h1>
-        <h3>Dear {{ $user->first_name }}!,</h3>
+        <h3>Dear {{ $user->name }}!,</h3>
         <h3>Your One-Time Password (OTP): {{ $email_verification_otp }} </h3>
         <p>Thank you for choosing PadiSwift.
         </p>

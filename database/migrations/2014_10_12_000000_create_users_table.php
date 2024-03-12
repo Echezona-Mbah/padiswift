@@ -18,6 +18,10 @@ return new class extends Migration
             $table->string('last_name');
             $table->string('email')->unique();
             $table->string('phone')->nullable();
+            $table->string('ref')->nullable();
+            $table->string('my_ref_code', 6)->unique();
+            $table->string('no_of_referrals')->default(0);
+            $table->string('no_of_upgrades')->default(0);
             $table->string('sex')->nullable();
             $table->string('dob')->nullable();
             $table->string('occupation')->nullable();
